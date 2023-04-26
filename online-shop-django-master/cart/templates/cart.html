@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="col-md-2"></div>
+{% if cart_count != 0 %}
+<div class="col-md-8 border rounded p-3">
+<table class="table table-striped ">
+    <thead class="text-muted">
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">product</th>
+        <th scope="col">price</th>
+        <th scope="col">quantity</th>
+        <th scope="col">total price</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    {% for item in cart %}
+    <tbody>
+      <tr>
+        <th scope="row">{{ forloop.counter }}</th>
+        <td><a class="text-decoration-none" href="{{ item.product.get_absolute_url }}">{{ item.product.title }}</a></td>
+        <td>${{ item.price }}</td>
+        <td>{{ item.quantity }}</td>
+        <td>${{ item.total_price }}</td>
+        <td><a class="text-danger text-decoration-none" href="{% url 'cart:remove_from_cart' item.product.id %}">remove</a></td>
+      </tr>
+    </tbody>
+    {% endfor %}
+</table>
+<hr>
+<a href="{% url 'orders:create_order' %}" style="float: right;" class="btn btn-success mt-1">Checkout</a>
+<h4 class="mt-4"><span class="text-muted">Total:</span> ${{ cart.get_total_price }}</h4>
+</div>
+{% else %}
+<div class="col-md-8 mt-5 pt-5 text-center">
+  <br>
+  <h3 class="text-muted text-capitalize">cart is empty..!</h3>
+  <a href="/" class="text-primary text-decoration-none">Back</a>
+</div>
+{% endif %}
+<div class="col-md-2"></div>
+
+{% endblock %}

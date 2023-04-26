@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if orders %}
+{% for order in orders %}
+<div class="col-md-7 mb-4 border rounded p-3">
+<!-- order id on right -->
+<b style="float: right;">Order Id: {{ order.id }}</b>
+<!-- order payment status -->
+{% if order.status %}
+    <h4><b class="text-success">Successful</b></h4>
+{% else %}
+    <h3><b class="text-danger">Cancelled</b></h3>
+{% endif %}
+<div class="text-muted border-top pt-2"></div>
+{% for item in order.items.all  %}
+    <div class="border-bottom p-2">
+        <p>product: <a class="text-decoration-none" href="{{ item.product.get_absolute_url }}">{{item.product.title}}</a></p>
+        <p>Price: ${{item.price}}</p>
+        <p>quantity: {{item.quantity}}</p>
+    </div>
+{% endfor %}
+<b>Total price: ${{ order.get_total_price }}</b>
+</div>
+{% endfor %}
+{% else %}
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8 mt-5 pt-5 text-center">
+      <br>
+      <h3 class="text-muted text-capitalize">Orders list is empty..!</h3>
+      <a href="/" class="text-primary text-decoration-none">Back</a>
+    </div>
+    <div class="col-md-2"></div>
+</div>
+{% endif %}
+
+{% endblock %}
