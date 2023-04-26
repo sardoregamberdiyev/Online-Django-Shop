@@ -1,41 +1,41 @@
 # Django Online Shop
 ![Screenshot 2022-01-09 at 17-04-55 Django Online Shop](https://user-images.githubusercontent.com/71011395/148684469-79bfdb07-efa0-4dde-ad76-1f3277f833e6.png)
-a really simple but usable online shop written with django. this app provides a custom dashboard to manage the products and orders,
-users can like a product and add it to the cart, checkout and order is supported but the payment handled with a fake pay.  
+django bilan yozilgan haqiqatan ham oddiy, ammo foydalanish mumkin bo'lgan onlayn-do'kon. ushbu ilova mahsulot va buyurtmalarni boshqarish uchun maxsus asboblar panelini taqdim etadi,
+foydalanuvchilar mahsulotni yoqtirishi va uni savatga qo'shishi mumkin, to'lov va buyurtma qo'llab-quvvatlanadi, ammo to'lov soxta to'lov bilan amalga oshiriladi. 
 
-[Preview](#app-preview)
+[Ko‘rib chiqish](#app-preview)
 
-## Features:
-there is two kind of user in this app: user and manager.
+## Xususiyatlari:
+Ushbu ilovada ikki turdagi foydalanuvchi mavjud: foydalanuvchi va menejer.
 
 available to the user:
-- cart
-- edit personal information
-- orders
-- favorites
-- reset password using email
+- savat
+- shaxsiy ma'lumotlarni tahrirlash
+- buyurtmalar
+- sevimlilar
+- elektron pochta orqali parolni tiklash
 
-manager can access all these features  
-in the custom dashboard in this address: http://127.0.0.1:8000/accounts/login/manager  
-email: manager@example.com  
-password: managerpass1234  
+menejer bu barcha xususiyatlarga kirishi mumkin
+ushbu manzildagi maxsus dashboard paneli: http://127.0.0.1:8000/accounts/login/manager
+email: manager@example.com
+parol: managerpass1234 
 
-- add product
-- edit and delete a product
-- add new category
-- access to all orders and order items
+- mahsulot qo'shish
+- mahsulotni tahrirlash va o'chirish
+- yangi toifa qo'shing
+- barcha buyurtmalar va buyurtma buyumlariga kirish
 
 
-## Used in this app:
+## Ushbu ilovada foydalanilgan:
 - python3
 - django 
 - bootstrap
 - sqlite3 database
 
 
-## How To Run it:
-1. clone or download the project.
-2. change directory to ``` online-shop-django```
+## Uni qanday ishga tushirish kerak:
+1. loyihani clone qilish yoki yuklab olish.
+2. katalogni ``` online-shop-django`` ga o`zgartiring
 3. make sure you have ``python3``, ```pip``` and ```virtualenv``` installed in your machine.
 4. create virtualenv: ```python3 -m venv venv```
 5. active virtualenv: Mac & Linux os: ```source venv/bin/activate```, Windows os: ```venv\scripts\activate```
@@ -44,5 +44,5 @@ password: managerpass1234
 8. run the server: ```python manage.py runserver```
 9. you should be able to open this address now: http://127.0.0.1:8000/
 
-## App Preview
+## Ilovani oldindan ko'rish
 ![Peek 2022-01-09 19-15](https://user-images.githubusercontent.com/71011395/148689722-6ceacc8f-81b7-48e0-a258-9d4e543d1e7c.gif)
